@@ -1,0 +1,30 @@
+.feedback{
+    background-color: lightgray;
+    width: 200px;
+   height: inherit;
+    margin: 10px;
+    padding: 10px;
+}
+
+.content{
+    font-size: 20px;
+    font-weight: bold;
+    color: darkblue;
+    margin-bottom: 7px;
+}
+
+.namePerson{
+    font-size: 26px;
+    color: rgb(105, 105, 105);
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.stars{
+    background-color: white;
+}
+
+.textarea{
+    width: 190px;
+    height: 100px;
+}

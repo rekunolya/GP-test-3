@@ -1,0 +1,25 @@
+table,
+th,
+tr,
+td {
+  border: 1px solid;
+  border-color: black;
+  border-collapse: collapse;
+  padding: 10px;
+  font-size: 18px;
+}
+
+
+.vegan{
+      color: rgb(53, 161, 71);
+      font-weight: bold;
+}
+
+.wellFed{
+    color: grey
+}
+
+.notVegan{
+    color: black;
+    font-weight: bold;
+}
