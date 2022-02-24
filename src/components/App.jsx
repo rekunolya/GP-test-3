@@ -1,6 +1,8 @@
 import '../App.css'
 import React from "react";
+//import { Feedback } from './Feedback/Feedback';
 import { Feedback } from './Feedback';
+//import { Button } from './Button'
 
 export class App extends React.Component {
   constructor(props) {
@@ -9,8 +11,7 @@ export class App extends React.Component {
       isLoading: false,
       listGuests: [],
       eatsPizzaList: [],
-      guestVegans: [],
-      isVisible: false
+      guestVegans: []
     }
   }
 
@@ -37,7 +38,7 @@ export class App extends React.Component {
       );
   }
 
-  getEatsPizzaList() {
+ getEatsPizzaList() {
     console.log('я зашел в eatsPizza')
    // let names = this.state.listGuests;
     //let name = names.map((el) => el.name.replace(" ", "%20")).join();
@@ -83,15 +84,10 @@ export class App extends React.Component {
   }
 
   isPersonVegan = (person) => 
-    //console.log('я зашел в персон веган')
-   // const vegan = this.state.guestVegans;
     !!this.state.guestVegans.find((guest) => guest.name === person.name)
-   // console.log('веганы', vegan)
 
    isPersonEatsPizza = (person) => 
    !!this.state.eatsPizzaList.find((guest) => guest.name === person.name)
-
-  
 
   render () {
     const {listGuests,  error, isLoading,} = this.state
@@ -110,7 +106,7 @@ export class App extends React.Component {
          <tbody>
            {listGuests.map(el => (
                   <tr>
-                    <td className={!this.isPersonEatsPizza(el) ? "wellFed" : this.isPersonVegan(el) ? "vegan" :  "notVegan" }>
+                    <td className={!this.isPersonEatsPizza(el) ? "wellFed" : this.isPersonVegan(el) ? "vegan" :  "notVegan" } onClick = {this.personOnClick}>
                     {el.name}
                     </td> 
                   </tr>
@@ -118,8 +114,7 @@ export class App extends React.Component {
       
          </tbody>
        </table>
-       <Feedback name = "Pete"/>
-      
+       <Feedback/>
       </div>
     );
   }
